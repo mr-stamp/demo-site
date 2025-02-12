@@ -1,0 +1,16 @@
+body {
+  background-color: #d3e8ec;
+  color: black;
+  text-align: center;
+}
+
+.bordered {
+  border-style: solid;
+  border-color: #d3dbec;
+  border-width: 3px;
+  border-radius: 9px;
+  padding: 5px;
+
+  background-color: #e4d3ec;
+  color: #555555;
+}
