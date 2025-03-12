@@ -38,20 +38,37 @@
   <script>
     function playMusic(event) {
       let audio = document.querySelector("#background-aud");
-      audio.setAttribute("autoplay", "true");
-      console.log("here");
+      //audio.setAttribute("autoplay", "true");
+      try {
+        audio.play();
+      } catch (err) {
+        console.log("error");
+      }
+      console.log("in");
+    }
+    
+    
+    function pauseMusic(event) {
+      let audio = document.querySelector("#background-aud");
+      //audio.setAttribute("autoplay", "false");
+      try {
+        audio.pause();
+      } catch (err) {
+        console.log("error");
+      }
+      console.log("out");
     }
   </script>
 </head>
 <body>
-  <video id="background-vid" autoplay muted preload loop>
-    <source src="https://upload.wikimedia.org/wikipedia/commons/c/c8/CarAnimation1.webm" type="video/webm">
+  <video id="background-vid" autoplay muted preload loop onmouseover="pauseMusic(event)">
+    < source src="https://upload.wikimedia.org/wikipedia/commons/c/c8/CarAnimation1.webm" type="video/webm">
   </video>
-  
+
   <audio id="background-aud" preload loop>
     <source src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Rock_and_roll_-_uk%C3%A1zka.ogg" type="audio/ogg">
   </audio>
-  
+
   <div id="content" onmouseover="playMusic(event)">
     <h1>Welcome to the <span class="cool">Cool Guys</span> Garage!</h1>
   </div>
