@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cool Guys Garage</title>
+  <style>
+    body{
+  margin: 0px;
+}
+
+#background-vid {
+  width: 100vw;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  opacity: 0.5;
+}
+
+#background-aud {
+  
+}
+
+#content {
+  position: absolute;
+  top: 20%;
+  bottom: 20%;
+  left: 20%;
+  right: 20%;
+  padding: 50px;
+  background-color: rgba(120, 120, 250, 0.7);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.cool {
+  font-family: cursive;
+}
+  </style>
+  <script>
+    function playMusic(event) {
+      let audio = document.querySelector("#background-aud");
+      audio.setAttribute("autoplay", "true");
+      console.log("here");
+    }
+  </script>
+</head>
+<body>
+  <video id="background-vid" autoplay muted preload loop>
+    <source src="https://upload.wikimedia.org/wikipedia/commons/c/c8/CarAnimation1.webm" type="video/webm">
+  </video>
+  
+  <audio id="background-aud" preload loop>
+    <source src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Rock_and_roll_-_uk%C3%A1zka.ogg" type="audio/ogg">
+  </audio>
+  
+  <div id="content" onmouseover="playMusic(event)">
+    <h1>Welcome to the <span class="cool">Cool Guys</span> Garage!</h1>
+  </div>
+</body>
+</html>
