@@ -22,5 +22,17 @@ if (!hasInitAccess) {
 
 console.log(document.cookie);
 
+let diffString = "";
 
-diffSpan.innerText = timeDiff;
+//if it's a day or more, include the day part of it
+if (timeDiff >= 86400000) {
+  let _numDays = Math.floor(timeDiff / 86400000);
+  diffString+= _numDays + " Days, "
+}
+
+let numHours = Math.floor((timeDiff % 86400000) / 3600000);
+let numMins = Math.floor((timDiff % 3600000) / 60000);
+diffString+= numHours + ":" + numMins;
+
+  
+diffSpan.innerText = diffString;
