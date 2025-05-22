@@ -31,7 +31,7 @@ if (timeDiff >= 86400000) {
 }
 
 let numHours = Math.floor((timeDiff % 86400000) / 3600000);
-let numMins = Math.floor((timDiff % 3600000) / 60000);
+let numMins = Math.floor((timeDiff % 3600000) / 60000);
 diffString+= numHours + ":" + numMins;
 
   
